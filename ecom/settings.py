@@ -133,7 +133,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # https://devcenter.heroku.com/articles/django-assets
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 #Added manually 👇
 STATICFILES_DIRS = [
