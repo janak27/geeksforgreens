@@ -83,7 +83,12 @@
               </div>
             </div>
             <div class="form-group col-md-12"> 
-              <button type="submit" class="btn btn-primary">Place Order</button>
+              <button type="submit" class="btn btn-primary">
+                <a href="https://pages.razorpay.com/pl_M1wr93SaQPLpy1/view?amount=1000" id="redirect-link" target="_blank" style="color:white">
+                  place Order 
+                </a>
+                
+              </button>
             </div>
             
             
@@ -101,7 +106,7 @@
     
   }
 
-  total = 0;
+  total = 100;
   for (item in cart){
     let name = cart[item][1];
     let quantity = cart[item][0];
@@ -118,6 +123,16 @@
   $('#item_list').append(totalPrice);
   $('#total').val(total)
   $('#items').val(JSON.stringify(cart)); 
+  // Find the <a> tag with ID "redirect link"
+var redirectLink = $("#redirect-link");
+
+// Update the href attribute with a new URL
+redirectLink.attr("href", "https://pages.razorpay.com/pl_M1xewq9jQNiUzQ/view?amount=" + total );
+$(document).ready(function() {
+  $("#redirect-link").click(function(e) {
+    $("form").submit();
+  });
+});
 </script>
 
 
